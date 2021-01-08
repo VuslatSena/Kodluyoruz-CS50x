@@ -1,0 +1,43 @@
+# Project: cs50x_kodluyoruz
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = main.o credit_task.o hello_task.o mario_task.o mario_advanced_task.o cash_task.o
+LINKOBJ  = main.o credit_task.o hello_task.o mario_task.o mario_advanced_task.o cash_task.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = cs50x_kodluyoruz.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+credit_task.o: credit_task.c
+	$(CC) -c credit_task.c -o credit_task.o $(CFLAGS)
+
+hello_task.o: hello_task.c
+	$(CC) -c hello_task.c -o hello_task.o $(CFLAGS)
+
+mario_task.o: mario_task.c
+	$(CC) -c mario_task.c -o mario_task.o $(CFLAGS)
+
+mario_advanced_task.o: mario_advanced_task.c
+	$(CC) -c mario_advanced_task.c -o mario_advanced_task.o $(CFLAGS)
+
+cash_task.o: cash_task.c
+	$(CC) -c cash_task.c -o cash_task.o $(CFLAGS)
