@@ -1,2 +1,2 @@
-# Kodluyoruz_cs50x
+# Kodluyoruz_CS50x
 Kodluyoruz x CS50X Lessons Probelm Sets Solution
